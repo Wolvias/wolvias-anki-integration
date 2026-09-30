@@ -7,56 +7,76 @@ This add-on allows Anki to display questions exported from WA-PDF Studio, includ
 ## Features
 
 * Displays WA-PDF Studio questions inside Anki
-* Renders the exported PDF image
-* Displays annotation rectangles on the image
+* Renders PDF images
+* Displays annotation rectangles on the images
 * Supports question and answer cards
-* Supports Anki's card preview
-* Compatible with WA-PDF Studio `.apkg` exports
-* Keeps the processing inside Anki — no external service is required
+* Supports Anki card preview
+* Automatically detects Wolvias PDF Question cards
+* Supports `.apkg` exports from WA-PDF Studio
 
 ## Requirements
 
-* Anki **23.10 or newer**
-* An `.apkg` file exported from **WA-PDF Studio**
+* Anki 23.10 or newer
+* An `.apkg` file exported from WA-PDF Studio
 
 ## Installation
 
-### Option 1 — AnkiWeb
+This add-on is currently distributed as a folder.
 
-If the add-on is available on AnkiWeb:
+1. Download the repository.
+2. Extract the repository files.
+3. Copy the add-on folder to your Anki add-ons directory:
 
-1. Open Anki.
-2. Go to **Tools → Add-ons → Get Add-ons**.
-3. Enter the add-on code.
+```text
+Anki2/addons21/
+```
+
+The final structure should look like:
+
+```text
+Anki2/
+└── addons21/
+    └── wolvias_anki/
+        ├── __init__.py
+        ├── constants.py
+        ├── renderer.py
+        └── manifest.json
+```
+
 4. Restart Anki.
-
-### Option 2 — Install from file
-
-1. Download the latest `.ankiaddon` file from the [Releases](../../releases) page.
-2. Open Anki.
-3. Go to **Tools → Add-ons → Install from file**.
-4. Select the downloaded `.ankiaddon` file.
-5. Restart Anki.
 
 ## Usage
 
-1. Create or open a project in **WA-PDF Studio**.
-2. Create your PDF questions and annotations.
-3. Export the questions as an **Anki package (`.apkg`)**.
-4. Import the `.apkg` file into Anki.
-5. Review the cards normally.
+1. Create your questions and annotations in **WA-PDF Studio**.
+2. Export them as an **Anki package (`.apkg`)**.
+3. Import the `.apkg` file into Anki.
+4. Review the cards normally.
 
 The add-on automatically detects Wolvias PDF Question cards and renders their annotation rectangles.
 
-## Compatibility
+## How It Works
 
-The add-on expects cards exported by WA-PDF Studio using the following fields:
+WA-PDF Studio exports the required information into the Anki card fields.
+
+The add-on reads these fields and renders the PDF image and annotation rectangles when the card is displayed.
+
+The expected fields are:
 
 * `Question`
 * `Image`
 * `Rectangles`
 
-Older Wolvias rectangle markers are also supported for compatibility.
+No external service is required for the add-on.
+
+## Compatibility
+
+The add-on supports:
+
+* Review cards
+* Answer cards
+* Card preview
+* Current WA-PDF Studio rectangle format
+* Legacy Wolvias rectangle markers
 
 ## Troubleshooting
 
@@ -66,21 +86,23 @@ Make sure:
 
 * The card was exported from WA-PDF Studio.
 * The `Rectangles` field contains valid data.
-* The add-on is enabled.
-* You restarted Anki after installing or updating the add-on.
+* The add-on folder is inside `Anki2/addons21/`.
+* Anki has been restarted after installing the add-on.
 
 ### Anki shows an error
 
-Please include the error message and your Anki version when reporting an issue.
+Please include:
+
+* Your Anki version
+* The error message
+* The version of Wolvias Anki Integration
+
+when reporting an issue.
 
 ## About
 
-**Wolvias Anki Integration** is part of the Wolvias ecosystem.
-
-WA-PDF Studio is a browser-based PDF annotation and study tool.
-
-**WA-PDF Studio:** (https://github.com/Wolvias/wolvias-anki-integration/)
+**Wolvias Anki Integration** is an add-on for **WA-PDF Studio**, a browser-based PDF annotation and study tool developed by Wolvias.
 
 ## License
 
-See the repository for licensing information.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
