@@ -79,7 +79,7 @@ Please include the error message and your Anki version when reporting an issue.
 
 WA-PDF Studio is a browser-based PDF annotation and study tool.
 
-**WA-PDF Studio:** [Coming soon / official link]
+**WA-PDF Studio:** (https://github.com/Wolvias/wolvias-anki-integration/)
 
 ## License
 
