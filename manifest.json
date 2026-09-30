@@ -1,0 +1,12 @@
+{
+    "name": "Wolvias Anki Integration",
+    "package": "wolvias_anki",
+    "author": "Achouri",
+    "version": "1.0.0",
+    "description": "Anki integration for Wolvias PDF questions.",
+    "homepage": "https://github.com/",
+    "conflicts": [],
+    "mod": 0,
+    "min_point_version": 231000,
+    "max_point_version": 1000000
+}
